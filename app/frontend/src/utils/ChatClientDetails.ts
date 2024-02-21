@@ -10,10 +10,13 @@ export interface ChatDetailsData {
   endpointUrl: string;
 }
 
-export const getChatDetails = async (): Promise<ChatDetailsData> => {
+export const getChatDetails = async (token: string): Promise<ChatDetailsData> => {
   try {
     const getRequestOptions = {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     };
     const response = await fetch(`${BASE_URL}/api/customer/startconversation`, getRequestOptions);
 

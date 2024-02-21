@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+import { useMsal } from '@azure/msal-react';
 import config from '../appsettings.json';
 const BASE_URL = config.baseUrl;
 

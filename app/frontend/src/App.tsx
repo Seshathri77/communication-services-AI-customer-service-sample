@@ -67,7 +67,6 @@ export default (): JSX.Element => {
         document.title = `Home - ${webAppTitle}`;
         return <HomeScreen />;
       }
-
       case 'Agent': {
         if (agentData !== undefined) {
           const displayName = 'Technician';

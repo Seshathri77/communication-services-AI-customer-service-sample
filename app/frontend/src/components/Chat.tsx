@@ -11,6 +11,7 @@ import React, { useMemo, useState } from 'react';
 import '../styles/Chat.css';
 
 import { initializeIcons } from '@fluentui/react';
+import { useMsal } from '@azure/msal-react';
 
 const DISPLAY_NAME = 'Customer';
 
@@ -25,7 +26,9 @@ interface ChatProps {
 function Chat(props: ChatProps): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { endpointUrl, userId, token, threadId } = props;
-  const displayName = DISPLAY_NAME;
+  const { instance, accounts } = useMsal();
+  const displayName = instance.getActiveAccount()?.name ?? DISPLAY_NAME;
+
   const credential = useMemo(() => {
     try {
       return new AzureCommunicationTokenCredential(token);
@@ -53,7 +56,7 @@ function Chat(props: ChatProps): JSX.Element {
         {isOpen ? (
           <div className="chat-popup">
             <div className="chat-header">
-              <h4 className="chat-title">Customer Support</h4>
+              <h4 className="chat-title">Hi, how can I help you?</h4>
               <button onClick={() => setIsOpen(false)}>X</button>
             </div>
             <div className="chat-control">
@@ -62,7 +65,7 @@ function Chat(props: ChatProps): JSX.Element {
           </div>
         ) : (
           <button className="open-chat-button" onClick={() => setIsOpen(true)}>
-            Customer Support
+            Chat with us
           </button>
         )}
       </div>

@@ -6,7 +6,6 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Outfit', Arial, sans-serif;
-    background-image: linear-gradient(rgba(255,255,255,0) 50%,rgba(255,255,255,1)), url('../assets/images/forest.jpg');
     background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
     background-position: bottom, center;

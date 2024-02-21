@@ -91,14 +91,6 @@ export const AgentPage = (props: AgentPageProps): JSX.Element => {
           }}
         >
           <ChatWindow {...props} userId={ACSUserid} />
-          <VideoWindow
-            refreshAssistantPanelData={() => {
-              refreshAssistantPanelData();
-            }}
-            {...props}
-            userId={ACSUserid}
-            callLocator={callLocator}
-          />
         </div>
       </div>
       <div id="copilot">

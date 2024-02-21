@@ -32,7 +32,7 @@ Licensed under the MIT License.*/
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #00894F;
+    background-color: #020202;
     border-radius: 10px 10px 0 0;
 }
 
@@ -90,7 +90,7 @@ Licensed under the MIT License.*/
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #00894F;
+    background-color: #000000;
     color: #fff;
     align-items: right;
     font-weight: bold;
